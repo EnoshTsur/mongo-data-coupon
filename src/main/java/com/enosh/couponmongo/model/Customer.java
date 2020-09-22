@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @ToString
 @Document(collection = "Customer")
-public class Customer {
+public class Customer implements CouponOwner{
 
     @Id
     private ObjectId id;
