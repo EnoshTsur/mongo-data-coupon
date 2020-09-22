@@ -3,8 +3,10 @@ package com.enosh.couponmongo.model;
 import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -20,6 +22,8 @@ public class Company {
     private ObjectId id;
 
     private String name;
+
+    @Indexed(unique = true)
     private String email;
     private String password;
     private List<Coupon> coupons;
@@ -28,5 +32,6 @@ public class Company {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.coupons = new ArrayList<>();
     }
 }
