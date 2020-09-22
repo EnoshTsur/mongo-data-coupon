@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://Enosh:abc123@ds019143.mlab.com:19143/dogs?retryWrites=false
